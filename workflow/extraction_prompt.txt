@@ -1,0 +1,21 @@
+PROMPT USED IN THE MAKE.COM WORKFLOW (module 3 - Google Gemini AI, model gemini-3.6-flash, JSON response mode)
+-------------------------------------------------------------------------------------------------------------
+
+You are an investment analyst. Extract fields from the investment memo below.
+Return ONLY raw JSON. No markdown, no code fences, no explanation.
+Use exactly these keys and formats (example values shown):
+{"company_name":"AgriWave Ltd","business_description":"max 40 words","sector":"text","primary_country":"Nigeria","funding_requested_usd":10000000,"funding_comment":"debt/equity split","climate_alignment":"Yes, Adaptation | Yes, Mitigation | Maybe | No","two_x_alignment":"Yes | No | Maybe","security_offered":"text","revenue":[2022,2023,2024,2025],"pat":[2022,2023,2024,2025],"data_quality_flags":["text"]}
+Rules: use null if not stated; never guess; money in full USD (multiply USD '000 by 1000); revenue and pat are arrays of values for years 2022, 2023, 2024, 2025F; list any contradictions in the memo in data_quality_flags.
+
+MEMO:
+{{2.data}}   <- mapped from module 2 (Google Drive - Download a File, converted to plain text)
+
+
+DESIGN NOTES
+- Dropdown-type answers (climate, 2X) are constrained to the template's own list values so they drop straight into the validated cells.
+- primary_country must match the template's Country Gating Screen spelling so TMS!B14 resolves the tier automatically.
+- null-instead-of-guess and data_quality_flags keep the analyst in control of anything uncertain.
+
+EXTENSION (next step, not in the demo workflow)
+Add the full statement lines to the schema (cost_of_sales, other_income, ecl, opex lines, d&a, finance costs, tax,
+balance-sheet and cash-flow lines) and one Sheets module per row, following field_mapping.csv.

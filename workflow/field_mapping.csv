@@ -1,0 +1,27 @@
+JSON field,Template sheet,Cell(s),Transformation
+company_name,TMS Assessment,B5,as is
+business_description,TMS Assessment,B3,as is
+sector,TMS Assessment,B6,as is
+funding_requested_usd,TMS Assessment,B8,number
+funding_split + conflicts,TMS Assessment,C8,join to text
+two_x_alignment,TMS Assessment,B11,dropdown value (Yes/No/Maybe)
+climate_alignment,TMS Assessment,B10,dropdown value
+primary_country,TMS Assessment,B12,must match Country Gating Screen list -> B14 tier auto-lookup
+security_offered,TMS Assessment,C15,as is
+financials.revenue,Financial Overview,C6:F6,full USD
+financials.cost_of_sales,Financial Overview,C8:F8,negative
+financials.other_income,Financial Overview,C11:F11,
+financials.ecl,Financial Overview,C12:F12,negative
+opex_selling+opex_ga+opex_tech (+ reconciling item to ebitda_reported),Financial Overview,C14:F14,sum; difference flagged
+financials.depreciation_amortisation,Financial Overview,C18:F18,negative
+financials.finance_costs_net,Financial Overview,C20:F20,negative
+financials.fx,Financial Overview,C21:F21,
+financials.tax,Financial Overview,C23:F23,negative
+ppe / rou / intangibles / other_nca,Financial Overview,C30:F31 C33:F34,
+cash / inventory / loan_receivables_total / other_receivables,Financial Overview,C36:F39,loan book goes to row 38 (feeds asset coverage)
+st_debt / trade_payables / tax_liability / other_cl,Financial Overview,C43:F46,
+lt_debt / other_ncl,Financial Overview,C48:F49,
+retained_earnings / share_capital,Financial Overview,C53:F53 C55:F55,
+funding_split.senior_debt_usd,Financial Overview,L99,Investor loan amount
+data_quality_flags + conflicts,Review Flags,A4:E*,one row each
+VALIDATION (read back),Financial Overview,C58:F58 and C85:F85,non-zero -> add Review Flag

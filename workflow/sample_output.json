@@ -1,0 +1,14 @@
+{
+  "company_name": "AgriWave Ltd",
+  "business_description": "Tech-enabled agri-finance company giving 9-month input loans to smallholder farmers in Nigeria and Ghana, repaid via produce offtake.",
+  "sector": "Agriculture / Financial services",
+  "primary_country": "Nigeria",
+  "funding_requested_usd": 10000000,
+  "funding_comment": "USD 6m senior secured debt + USD 4m equity",
+  "climate_alignment": "Yes, Adaptation",
+  "two_x_alignment": "Yes",
+  "security_offered": "Pledge over loan receivables and produce inventory",
+  "revenue": [6200000, 8700000, 12500000, 17000000],
+  "pat": [300000, 600000, 1200000, 2000000],
+  "data_quality_flags": ["2025F balance sheet does not balance (8,500 vs 8,600)"]
+}
